@@ -72,7 +72,7 @@ export default function NilePage() {
       <section className="container mx-auto max-w-7xl px-6 py-4">
         <div className="w-full lg:w-1/2 mx-auto">
           <audio controls className="w-full rounded-lg">
-            <source src="/amazon-audio.mp3" type="audio/mpeg" />
+            <source src="/audio/nile/audio.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
         </div>
