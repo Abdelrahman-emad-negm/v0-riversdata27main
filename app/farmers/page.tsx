@@ -13,9 +13,31 @@ interface AdviceCategory {
   tips: string[]
   benefits: string[]
   image: string
+  link?: string
 }
 
 const adviceCategories: AdviceCategory[] = [
+  {
+    id: "environment",
+    title: "Help Environment",
+    icon: "🌳",
+    description: "Plant trees and restore nature",
+    tips: [
+      "Plant trees along field boundaries to prevent erosion",
+      "Create windbreaks to protect crops and reduce water loss",
+      "Restore degraded land with native tree species",
+      "Plant trees near water sources to protect water quality",
+      "Join reforestation programs in your community",
+    ],
+    benefits: [
+      "Improve air and water quality",
+      "Increase biodiversity on your farm",
+      "Reduce soil erosion by up to 80%",
+      "Create additional income from timber",
+    ],
+    image: "/river-trees.jpg",
+    link: "/farmers/plant-tree",
+  },
   {
     id: "irrigation",
     title: "Smart Irrigation",
@@ -138,6 +160,14 @@ export default function FarmersPage() {
 
   const selectedAdvice = adviceCategories.find((cat) => cat.id === selectedCategory)
 
+  const handleCategoryClick = (category: AdviceCategory) => {
+    if (category.link) {
+      window.location.href = category.link
+    } else {
+      setSelectedCategory(category.id)
+    }
+  }
+
   return (
     <main className="min-h-screen bg-background dark:bg-background">
       <div className="fixed top-0 left-0 z-50 p-6 flex items-center gap-4">
@@ -159,30 +189,86 @@ export default function FarmersPage() {
         </Link>
       </div>
 
-      {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-green-100 to-blue-100 dark:from-green-900/20 dark:to-blue-900/20">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="font-oswald text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 text-balance uppercase">
-            Water Conservation for Farmers
+            For Farmers
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-pretty">
-            Practical advice and proven techniques to conserve water, protect rivers, and improve farm productivity
+          <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-pretty">
+            As stewards of the land, farmers play a crucial role in protecting our rivers and water resources.
+          </p>
+          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
+            Discover practical techniques to conserve water, restore nature, and build a sustainable future for your
+            farm and community.
           </p>
         </div>
       </section>
 
-      {/* Categories Grid */}
+      <section className="py-16 px-4 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/30 dark:to-green-900/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 uppercase">
+              Take Action Today
+            </h2>
+            <p className="text-xl text-gray-700 dark:text-gray-300 text-pretty">
+              Make a real difference by planting trees and restoring the environment
+            </p>
+          </div>
+
+          <Card
+            className="p-8 md:p-12 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/40 dark:to-emerald-900/40 border-2 border-green-500/30"
+            onClick={() => handleCategoryClick(adviceCategories[0])}
+          >
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="text-7xl mb-6">🌳</div>
+                <h3 className="font-oswald text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white uppercase">
+                  Help Environment
+                </h3>
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                  Plant trees on your farm and verify your impact with our tree detection system. Every tree you plant
+                  helps restore nature and protect our rivers.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {adviceCategories[0].benefits.slice(0, 2).map((benefit, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 px-4 py-2 rounded-full"
+                    >
+                      <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+                      <span className="text-sm font-medium text-gray-900 dark:text-white">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="inline-block px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors shadow-lg">
+                  Start Planting Trees →
+                </div>
+              </div>
+              <div className="w-full h-80 rounded-xl overflow-hidden shadow-xl">
+                <img src="/river-trees.jpg" alt="Help Environment" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="font-oswald text-3xl md:text-4xl font-bold text-center mb-12 text-foreground uppercase">
-            Choose a Topic
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="font-oswald text-3xl md:text-4xl font-bold text-foreground mb-4 uppercase">
+              Water Conservation for Farmers
+            </h2>
+            <p className="text-lg text-muted-foreground text-pretty">
+              Practical advice and proven techniques to conserve water and protect rivers
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {adviceCategories.map((category) => (
+            {adviceCategories.slice(1).map((category) => (
               <Card
                 key={category.id}
-                className="p-6 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-primary/50 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20"
-                onClick={() => setSelectedCategory(category.id)}
+                className="p-6 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-primary/50 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20"
+                onClick={() => handleCategoryClick(category)}
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="w-full h-40 mb-4 rounded-lg overflow-hidden bg-muted">
