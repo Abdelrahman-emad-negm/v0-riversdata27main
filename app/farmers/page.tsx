@@ -35,7 +35,7 @@ const adviceCategories: AdviceCategory[] = [
       "Reduce soil erosion by up to 80%",
       "Create additional income from timber",
     ],
-    image: "/river-trees.jpg",
+    image: "/lush-green-trees-growing-along-riverbank-with-clea.jpg",
     link: "/farmers/plant-tree",
   },
   {
@@ -51,7 +51,7 @@ const adviceCategories: AdviceCategory[] = [
       "Use mulch around plants to retain soil moisture",
     ],
     benefits: ["Reduce water usage by up to 50%", "Lower energy costs", "Improve crop yields", "Prevent soil erosion"],
-    image: "/watering-garden.jpg",
+    image: "/modern-drip-irrigation-system-watering-crops-in-ag.jpg",
   },
   {
     id: "soil",
@@ -71,7 +71,7 @@ const adviceCategories: AdviceCategory[] = [
       "Improve soil fertility",
       "Prevent nutrient runoff",
     ],
-    image: "/soil-management.jpg",
+    image: "/rich-dark-fertile-soil-with-hands-holding-compost-.jpg",
   },
   {
     id: "crops",
@@ -91,7 +91,7 @@ const adviceCategories: AdviceCategory[] = [
       "Lower production costs",
       "Diversify farm income",
     ],
-    image: "/crop-selection.jpg",
+    image: "/golden-wheat-crops-growing-in-agricultural-field-u.jpg",
   },
   {
     id: "rainwater",
@@ -111,7 +111,7 @@ const adviceCategories: AdviceCategory[] = [
       "Recharge aquifers naturally",
       "Provide water during dry seasons",
     ],
-    image: "/flowing-river-sunset.jpg",
+    image: "/rainwater-harvesting-system-with-storage-tanks-and.jpg",
   },
   {
     id: "runoff",
@@ -131,7 +131,7 @@ const adviceCategories: AdviceCategory[] = [
       "Save on fertilizer costs",
       "Support aquatic ecosystems",
     ],
-    image: "/river-trees.jpg",
+    image: "/terraced-agricultural-land-with-vegetation-buffer-.jpg",
   },
   {
     id: "technology",
@@ -151,7 +151,7 @@ const adviceCategories: AdviceCategory[] = [
       "Reduce labor costs",
       "Increase productivity",
     ],
-    image: "/farm-technology.jpg",
+    image: "/farmer-using-tablet-and-sensors-for-smart-agricult.jpg",
   },
 ]
 
@@ -245,7 +245,11 @@ export default function FarmersPage() {
                 </div>
               </div>
               <div className="w-full h-80 rounded-xl overflow-hidden shadow-xl">
-                <img src="/river-trees.jpg" alt="Help Environment" className="w-full h-full object-cover" />
+                <img
+                  src={adviceCategories[0].image || "/placeholder.svg"}
+                  alt="Help Environment"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </Card>

@@ -27,7 +27,7 @@ const activities: Activity[] = [
       "Install a low-flow showerhead to reduce usage by 40%",
       "Turn off water while soaping",
     ],
-    image: "/modern-bathroom-shower.png",
+    image: "/modern-bathroom-with-rainfall-shower-head-and-glas.jpg",
   },
   {
     id: "dishes",
@@ -40,7 +40,7 @@ const activities: Activity[] = [
       "Don't pre-rinse dishes before dishwasher",
       "Fill sink basin instead of running water",
     ],
-    image: "/washing-dishes.jpg",
+    image: "/person-washing-dishes-in-kitchen-sink-with-running.jpg",
   },
   {
     id: "laundry",
@@ -53,7 +53,7 @@ const activities: Activity[] = [
       "Use cold water when possible",
       "Choose high-efficiency washing machines",
     ],
-    image: "/laundry-machine.jpg",
+    image: "/modern-front-loading-washing-machine-with-clothes.jpg",
   },
   {
     id: "cooking",
@@ -66,7 +66,7 @@ const activities: Activity[] = [
       "Steam vegetables instead of boiling",
       "Keep a pitcher of water in fridge instead of running tap",
     ],
-    image: "/cooking-kitchen.png",
+    image: "/person-cooking-vegetables-in-modern-kitchen-with-s.jpg",
   },
   {
     id: "brushing",
@@ -79,7 +79,7 @@ const activities: Activity[] = [
       "Use a cup to rinse instead of running water",
       "Fix leaky faucets immediately",
     ],
-    image: "/brushing-teeth.jpg",
+    image: "/person-brushing-teeth-at-bathroom-sink-with-toothb.jpg",
   },
   {
     id: "garden",
@@ -92,7 +92,7 @@ const activities: Activity[] = [
       "Use drip irrigation systems",
       "Collect rainwater for garden use",
     ],
-    image: "/watering-garden.jpg",
+    image: "/person-watering-green-garden-plants-with-watering-.jpg",
   },
 ]
 
